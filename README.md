@@ -2,6 +2,14 @@
 
 Detect V8 JavaScript engine exploitation artifacts in Chrome process memory dumps.
 
+This work builds on research from the paper [Juicing V8: A Primary Account for the Memory Forensics of the V8 JavaScript Engine](https://www.sciencedirect.com/science/article/pii/S2666281722000816), which first demonstrated symbol-less V8 object extraction, so a big thanks to the following authors for laying the groundwork that made this tool possible:
+
+- Enoch Wang
+- Smuel Zurowski
+- Orion Duffy
+- Tyler Thomas
+- Ibrahim Baggili
+
 ## What it does
 
 Scans Chrome renderer minidumps for heap corruption patterns that indicate active or attempted exploitation:
@@ -88,4 +96,5 @@ chrome.exe --renderer-process-limit=1 --disable-crash-reporter --enable-logging=
 2. Derives the cage base from MetaMap's address
 3. Finds all Map objects (they point to MetaMap)
 4. Finds all JSArrays by scanning for valid Map pointers
+
 5. Validates each array against V8's structural invariants
