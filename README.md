@@ -23,7 +23,7 @@ These patterns violate V8 invariants and don't occur during normal JavaScript ex
 ## Install
 
 ```bash
-git clone https://github.com/user/v8-forensics
+git clone https://github.com/medioxor/v8-forensics.git
 cd v8-forensics
 cargo build --release
 ```
